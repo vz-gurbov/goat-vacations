@@ -1,0 +1,235 @@
+@media screen and (max-width: 1350px) {
+    .imgBox.active {
+        width: 65%;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .agent {
+        &__list > li > a {
+            text-decoration: none;
+            font-size: 10px;
+            padding: 0 10px;
+        }
+
+    }
+
+    .footer {
+        &__top--connect {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .footer__top {
+        &--phone, &--office, &--mail, &--call {
+            padding-bottom: 3%;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+// Menu
+
+.agent {
+    &__menu--wrap {
+        position: absolute;
+    }
+
+    &__nav {
+        position: fixed;
+        top: -1em;
+        left: 0;
+        z-index: 2;
+    }
+
+    &__toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+
+    &__hamburger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.6s ease;
+    }
+
+    &__hamburger > div::before,
+    &__hamburger > div::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+
+    &__hamburger > div::after {
+        top: 10px;
+    }
+
+    &__toggler:checked + &__hamburger > div {
+        transform: rotate(135deg);
+    }
+    
+    /*Turn burger to X*/
+    &__toggler:checked + &__hamburger > div::before,
+    &__toggler:checked + &__hamburger > div::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /*Rotate on hover when checked*/
+    &__toggler:checked:hover + &__hamburger > div {
+        transform: rotate(225deg);
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__menu > div {
+        background-color: rgb(0, 180, 180);
+        border-radius: 50%;
+        width: 100vw;
+        height: 100vw;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        transition: all 0.6s ease;
+    }
+
+    &__menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+
+    &__menu > div > div > ul > li::after {
+     content: '';
+     display: block;
+     width: 0;
+     height: 3px;
+     margin-top: 0.5rem;
+     background-color: white;
+     transition: width 0.6s;
+    }
+
+    &__menu > div > div > ul > li:hover::after {
+        width: 50%;
+        transition: width 0.6s;
+       }
+
+    &__toggler:checked ~ &__menu {
+            visibility: visible;
+    } 
+
+    &__toggler:checked ~ &__menu > div {
+        transform: scale(1);
+        transition-duration: 0.6s ease;
+    }
+
+    &__toggler:checked ~ &__menu > div > div {
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        }
+    }
+
+    .vertical-top {
+        justify-content: space-evenly !important;
+    }
+
+    .header {
+        &__icons > img {
+            padding: 0;
+        }
+
+        &__logo {
+            position: relative;
+            left: -10%;
+        }
+
+        &__icons {
+            position: relative;
+            left: 5%;
+        }
+
+        &__topBox {
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        &__topBox--phone, &__topBox--mail {
+            display: block;
+            margin: 1%;
+        }
+
+        &__topBox--phone::before {
+            margin-left: -15%;
+        }
+
+        &__topBox--mail::before {
+            margin-left: -10%;
+        }
+
+        &__topBox--social {
+            width: 25%;
+        }
+
+    }
+
+        .agent {
+            &__list > li > a {
+                color: white;
+                padding: 0;
+            }
+
+            &__nav {
+                margin-top: 1%;
+            }
+
+        }
+ 
+}

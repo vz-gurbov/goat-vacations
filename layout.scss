@@ -1,0 +1,489 @@
+$dark: #020202;
+$lightdark: #181818;
+$light: #74787C;
+$lighter: #EFF2F5;
+
+@mixin booking-heading {
+    font-size: 25px;
+    line-height: 30px;
+    color: #020202;
+}
+
+@mixin booking-nights {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 320px;
+}
+
+main {
+    max-width: 1349px;
+    margin: 0 auto;
+}
+
+.header {
+    &__topBox {
+        width: 100%;
+        height: 30px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+    &__topBox--contacts {
+        color: white;
+        font-size: 11px;
+        line-height: 13px;
+        padding-top: 7.5px;
+        vertical-align: middle;
+        width: 50%;
+        margin-left: 2%;
+    }
+
+    &__topBox--contacts > span {
+        padding: 0 5%;
+        position: relative;
+    }
+
+    &__topBox--phone::before {
+        content: "";
+        background-image: url('/images/phone.svg');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-repeat: no-repeat;
+        left: 10%;
+    }
+
+    &__topBox--mail::before {
+        content: "";
+        background-image: url('/images/mail.svg');
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-repeat: no-repeat;
+        left: 5%;
+    }
+
+    &__topBox--social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 10%;
+    }
+
+    &__logo {
+        padding-left: 1%;
+    }
+
+    &__icons {
+        padding-right: 1%;
+        position: relative;
+    }
+
+    &__icons > img {
+        padding: 0 5px;
+    }
+
+    @media screen and (min-width: 1300px) {
+    &__icons::before {
+        content: "";
+        width: 1px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 11em;
+        background-color: $light;
+        }
+    }
+    &__breadcrumbs {
+        width: 100%;
+        background-color: $lighter;
+        height: 51px;
+    }
+}
+
+.imgBox {
+    width: 970px;
+    margin: 50px 0px;
+}
+
+.carausel {
+    overflow: hidden;
+
+    &__thumb {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -560px;
+        left: 70%;
+    }
+
+    &__thumb:nth-child(2) {
+        margin-top: -40px;
+        width: 470px;
+    }
+
+    &__thumb--second {
+        margin-top: 7px;
+        width: 470px;
+    }
+}
+
+.agent {
+
+    &__nav {
+        margin-top: -3%;
+    }
+
+    &__toggler {
+       opacity: 0;
+    }
+
+    &__list {
+        padding-left: 0;
+    }
+
+    &__list > ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__list > li {
+        list-style-type: none;
+    }
+
+    &__list > li > a {
+        text-decoration: none;
+        color: $dark;
+        height: 18px;
+        font-size: 13px;
+        line-height: 15px;
+        padding: 0 15px;
+    }
+}
+
+
+.vertical-top {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+    align-items: center;
+    margin: 1% 0;
+}
+
+// user agent stylesheet
+ul {
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    ul {
+        flex-direction: column;
+    }
+}
+
+
+.footer {
+    text-align: center;
+    color: white;
+
+    &__top {
+        background-color: #00BBDA; 
+        width: 100%;   
+        padding-bottom: 10%;
+    }
+
+    &__bottom {
+        background-color: black;
+        padding-top: 1%;
+        padding-bottom: 3%;
+    }
+
+    &__heading {
+        font-size: 34px;
+        line-height: 40px;
+        height: 46px;
+        padding-top: 3em;
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: 27px;
+        padding: 1%;
+    }
+
+    &__top--connect {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 3em;
+    }
+
+    &__copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        vertical-align: middle;
+        font-size: 13px;
+        line-height: 15px;
+        padding: 1%;
+    }
+
+    &__copyright  > p > a {
+        color: white;
+        text-decoration: none;
+    }
+
+}
+
+    .footer__top {
+
+        &--phone, &--office, &--mail, &--call {
+            position: relative;
+        }
+
+        &--phone > h3, &--office > h3, &--mail > h3, &--call > h3 {
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        &--phone > p, &--office > p, &--mail > p, &--call > p {
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        &--phone::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url(/images/phone.svg);
+            background-repeat: no-repeat;
+            left: -10%;
+            top: 25%;
+        }
+
+        &--office::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url(/images/headphones.svg);
+            background-repeat: no-repeat;
+            left: -20%;
+            top: 15%;
+        }
+
+        &--mail::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url(/images/mail.svg);
+            background-repeat: no-repeat;
+            left: -5%;
+            top: 25%;
+        }
+
+        &--call::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url(/images/phone.svg);
+            background-repeat: no-repeat;
+            left: 0%;
+            top: 25%;
+        }
+
+        &--phone::after , &--office::after, &--mail::after, &--call::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100px;
+            background-color: white;
+            display: block;
+            top: 0;
+            left: 15em;
+        }
+
+        @media screen and (max-width: 1300px) {
+            &--phone::after , &--office::after, &--mail::after, &--call::after {
+                display: none;
+            }
+
+            &--phone::before , &--office::before, &--mail::before, &--call::before {
+                display: none;
+            }
+        }
+    }
+
+
+    .booking {
+        padding: 2%;
+
+        h1 {
+            @include booking-heading();
+        }
+
+
+        &__place {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        &__place::after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $lighter;
+            position: absolute;
+            top: 100%;
+        }
+
+        &__nights {
+            @include booking-nights();
+        }
+
+        &__nights--price {
+            position: relative;
+        }
+
+        &__nights--price::after {
+            content: '';
+            background-image: url(/images/favourites.svg);
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 1px;
+            left: 100px;
+        }
+
+        &__cost {
+            margin-right: 4%;
+            padding: 0 2%;
+        }
+
+        &__description {
+            color: $light;
+            font-size: 15px;
+            line-height: 25px;
+            width: 70%;
+            padding-right: 3%;
+            margin-top: 5%;
+        }
+
+        &__description > h2 {
+            @include booking-heading();
+            font-size: 20px;
+        }
+
+        &__agent {
+            background-color: $lightdark;
+            width: 320px;
+            height: 250px;
+            margin-top: 8em;
+            position: relative;
+        }
+
+        &__agent > h2 {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 6em;
+        }
+
+        
+        &__agent > span {
+            color: $light;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            margin-top: -5%;
+        }
+
+        &__agent--button {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 7%;
+        }
+
+        &__agent--call {
+            background-color: white;
+            padding: 15px 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        &__agent--mail {
+            background-color: rgb(0, 0, 0);
+            padding: 15px 30px;
+            color: white;
+            border: 1px solid white;
+            font-size: 12px;
+        }
+
+        &__agent::after {
+            content: '';
+            background-image: url(/images/agent.png);
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: -3em;
+            left: 25%;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__features > h2 {
+            @include booking-heading();
+            font-size: 20px;
+        }
+
+        &__feature {
+            background-color: white;
+            padding: 15px 30px;
+            border: 1px solid $lighter;
+            font-size: 12px;
+            margin: 1%;
+            color: $lightdark;
+        }
+
+        &__features--row1  {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;        
+        }
+
+        &__features--row2  {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;   
+        }
+    }
+
+@media screen and (max-width: 1024px) {
+    .booking__place, .booking__info {
+        text-align: center;
+        width: 100%;
+    }
+}
